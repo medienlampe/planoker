@@ -4,7 +4,9 @@ This is a raw and very straight forward mockup project for a Planning Poker WebA
 
 Anyway; for now it's been optimized for iPhone 5S and might look broken on other devices.
 
-![Screenshot](media/iPhone-5S-mockup.png)
+<p align="center">
+<img src="media/iPhone-5S-mockup.png" alt=""/>
+</p>
 
 ## Contributing
 
