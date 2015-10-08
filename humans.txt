@@ -12,4 +12,4 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, jQuery, Modernizr, Normalize.css, NPM, Grunt, editorconfig
+    CSS3, HTML5, jQuery, Normalize.css, NPM, Grunt, editorconfig
