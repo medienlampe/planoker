@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Sven Bischoff -- Frontend Developer -- @TheTalesOfImmo
+    Eric Zieger -- Frontend Developer -- @the_Zieger
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, jQuery, Modernizr, Normalize.css, NPM, Grunt, editorconfig
