@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>Planoker</title>
+  <link rel="stylesheet" href="dist/planoker.min.css">
+   <style type="text/css" media="screen and (orientation:landscape)">
+    .flexbox, .overlay {
+      display: none!important;
+    }
+    h2 {
+      width: 100%;
+      text-align:center;
+      display: block;
+      position: absolute;
+      top: 40%;
+    }
+  </style>
+</head>
+<body>
+<h2>Portraitmode only</h2>
+<div class="flexbox">
+  <div class="flex-row">
+    <div class="item">
+      <span class="number">0</span>
+      <span class="text">Lächerlich!</span>
+    </div>
+    <div class="item">
+      <span class="number">1</span>
+      <span class="text">Ich brauch' was Härteres!</span>
+    </div>
+    <div class="item">
+      <span class="number">2</span>
+      <span class="text">Das kostet mich ein Lächeln und 'ne Zeile Code.</span>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="item">
+      <span class="number">3</span>
+      <span class="text">I can fix that.</span>
+    </div>
+    <div class="item">
+      <span class="number">5</span>
+      <span class="text">The cake is a lie!</span>
+    </div>
+    <div class="item">
+      <span class="number">8</span>
+      <span class="text">Das liegt bestimmt am Flux-Kompensator!</span>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="item">
+      <span class="number">13</span>
+      <span class="text">1. Roll over<br/>2. Try not to cry<br/> 3. Cry a lot.</span>
+    </div>
+    <div class="item">
+      <span class="number">20</span>
+      <span class="text">Das kann ich nicht tun, Dave.</span>
+    </div>
+    <div class="item">
+      <span class="number">∞</span>
+      <span class="text">It's over 9000!</span>
+    </div>
+  </div>
+  <div class="flex-row">
+    <!--<div class="item">
+      <span class="number">☕</span>
+      <span class="text">F*** this s***, I'm outta' here.</span>
+    </div>-->
+    <div class="item">
+      <span class="number">?</span>
+      <span class="text">I have no idea what I'm doing.</span>
+    </div>
+  </div>
+</div>
+<div class="overlay">
+  <span class="number">8</span>
+  <span class="text">I have no idea what I'm doing.</span>
+</div>
+<script src="dist/planoker.min.js"></script>
+</body>
+</html>

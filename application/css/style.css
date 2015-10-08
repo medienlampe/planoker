@@ -1,0 +1,80 @@
+body,html {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 16px;
+  font-family: sans-serif;
+  text-align: center;
+}
+h2 {
+  display: none;
+}
+.flexbox, .overlay {
+  position: absolute;
+  background:#000;
+}
+.flexbox {
+  width: calc(100% - .5em);
+  height: calc(100% - .5em);
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  border: .25rem solid #333;
+}
+.overlay {
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  border: .5rem solid #333;
+  display: none;
+  z-index: 50;
+  cursor:pointer;
+}
+.flex-row {
+  display: flex;
+  display: -webkit-flex;
+  flex: 1;
+  flex-flow: row wrap;
+  -webkit-flex: 1;
+  -webkit-flex-flow: row wrap;
+  height:33.33%;
+}
+
+.flex-row .item {
+  flex: 1;
+  -webkit-flex: 1;
+  background: #222;
+  border: .25rem solid #333;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.flex-row .item:hover {
+  background: #333;
+}
+
+.flex-row .item span, .overlay span {
+  display:  block;
+}
+
+.flex-row span.number {
+  font-size: 4rem;
+  line-height: 5.5rem;
+}
+
+.flex-row span.text {
+  color:#aaa;
+  font-style: italic;;
+  font-size: .65rem;
+}
+
+.overlay span.number {
+  font-size: 14rem;
+  line-height: 22rem;
+}
+.overlay span.text {
+  color:#aaa;
+  font-style: italic;;
+  font-size: 1.76rem;
+}
