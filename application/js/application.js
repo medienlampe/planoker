@@ -1,17 +1,21 @@
-  $(document).ready(function(){
-    var $overlay = $('.overlay');
+$(document).on('storageLoaded', function(){
+  console.log(plokerLocalStorage)
+});
 
-    $(document).on('click', '.item', function(){
-      var number  = $('span.number', this).html(),
-          text    = $('span.text', this).html();
+$(document).ready(function(){
+  var $overlay = $('.overlay');
 
-          $('span.number', $overlay).html(number);
-          $('span.text', $overlay).html(text);
+  $(document).on('click', '.item', function(){
+    var number  = $('span.number', this).html(),
+        text    = $('span.text', this).html();
 
-          $overlay.show();
-    });
+        $('span.number', $overlay).html(number);
+        $('span.text', $overlay).html(text);
 
-    $(document).on('click', '.overlay', function(){
-      $overlay.hide();
-    });
+        $overlay.show();
   });
+
+  $(document).on('click', '.overlay', function(){
+    $overlay.hide();
+  });
+});
