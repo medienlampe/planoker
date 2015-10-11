@@ -9209,20 +9209,92 @@ return jQuery;
 
 }));
 
-  $(document).ready(function(){
-    var $overlay = $('.overlay');
+/**
+ * Handles LocalStorage feature detection
+ * and save/load of data
+ */
 
-    $(document).on('click', '.item', function(){
-      var number  = $('span.number', this).html(),
-          text    = $('span.text', this).html();
+'use strict';
 
-          $('span.number', $overlay).html(number);
-          $('span.text', $overlay).html(text);
+var plokerLocalStorage = (function ($) {
 
-          $overlay.show();
-    });
+  var oPlokerLocalStorage = {};
+  var oInternalStorage = {};
+  var sStorageName = 'plokerLocalStorage';
 
-    $(document).on('click', '.overlay', function(){
-      $overlay.hide();
-    });
+  /**
+   * @private
+   */
+  function _init() {
+
+    // check if localStorage is available else return false
+    try {
+      window.localStorage.setItem(sStorageName, sStorageName);
+      window.localStorage.removeItem(sStorageName);
+    } catch (e) {
+      return false;
+    }
+
+    // localstorage is available so we load the last save
+    var sStorageValue = window.localStorage.getItem(sStorageName);
+
+    // on first application start sStorage is null so we should check it
+    if (sStorageValue) {
+      oInternalStorage = JSON.parse(sStorageValue);
+    }
+
+    return oPlokerLocalStorage;
+  }
+
+  /**
+   * @public
+   */
+  oPlokerLocalStorage.setItem = function (sKey, item) {
+    // set/overwrite internal variable
+    oInternalStorage[sKey] = item;
+
+    // save to localstorage
+    window.localStorage.setItem(sStorageName, JSON.stringify(oInternalStorage));
+
+    return true
+  };
+
+  /**
+   * @public
+   */
+  oPlokerLocalStorage.getItem = function (sKey) {
+
+    // when sKey is available return the value
+    if (oInternalStorage[sKey]) {
+      return oInternalStorage[sKey];
+    }
+
+    return false;
+  };
+
+  // returns false or instance of oPlokerLocalStorage
+  return _init();
+
+}(jQuery));
+
+$(document).on('storageLoaded', function(){
+  console.log(plokerLocalStorage)
+});
+
+$(document).ready(function(){
+  var $overlay = $('.overlay');
+
+  $(document).on('click', '.item', function(){
+    var number  = $('span.number', this).html(),
+        text    = $('span.text', this).html();
+
+        $('span.number', $overlay).html(number);
+        $('span.text', $overlay).html(text);
+
+        $overlay.show();
   });
+
+  $(document).on('click', '.overlay', function(){
+    $overlay.hide();
+  });
+});
